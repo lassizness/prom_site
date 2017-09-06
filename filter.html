@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+  <script src="/js/jqueryui.custom.js"></script>
+  <link type="text/css" href="/js/jqueryui.custom.css" rel="stylesheet" />
+  <style>
+    body{padding:15px}
+  </style>
+</head>
+<body>
+  <div id="slider-range"></div>
+  <p>
+    <label for="amount">Укажите размах цен:</label>
+    <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" />
+  </p>
+
+  <script>
+    $("#slider-range").slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+        " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+  </script>
+</body>
+</html>

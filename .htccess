@@ -1,0 +1,4 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{QUERY_STRING} ^catalog/balls$ [NC]
+RewriteRule ^period/$ localhost$1 [L,R=301]

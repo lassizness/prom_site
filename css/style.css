@@ -1,0 +1,423 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700");
+html{ 
+	overflow-x: hidden;}
+body {	
+	background: url(../images/fone.png) repeat;
+	background-size: 100%;	
+	font-family: Lato;
+	font-size: 0.94em;
+}
+
+header{
+	display: block;
+	width: auto;
+	height: 500px;
+	background: url(../images/toppic.png) no-repeat,url(../images/city.png) no-repeat;  
+	background-size: 100%;	
+}
+
+#ss{
+	display: block;
+	position: relative;
+	left: -115px;
+	top: 4px;
+
+
+}
+
+footer{
+	display: block;
+	position: relative;
+	margin: auto;
+	bottom: 0%;
+	width: 100%;
+	height: 120px;
+	background: url(../images/bot.png) repeat;
+	background-size: 100%;	
+} 
+a.rollover {
+	background: url(../images/grey.png); 
+	background-size: 100%;
+	display: block; 
+	position: absolute;
+	top: 150px;
+	left: -65px;
+	width: 240px; 
+	height: 5px; 
+}
+a.rollover:hover {
+	background: url(../images/red.png); 
+	background-size: 100%;
+}
+ 
+a.rollover2 {
+	background: url(../images/red.png); 
+	background-size: 100%;
+	display: block; 
+	position: absolute;
+	top: 150px;
+	left: -65px;
+	width: 240px; 
+	height: 5px; 
+} 
+   
+#headerInner {
+	background-repeat: no-repeat;
+	background-image: url(../images/logo.png);
+ 
+	position: relative;
+	left: 205px;
+	width: 700px;
+	height: 250px;
+	margin: 0 auto;
+	margin-top: 0px;
+}
+.toppict {
+	max-width: 550px;
+}
+ 
+.field_prod{	
+	position: relative;
+	top: 150px;
+	width: 139%;	
+	left: -20px;
+}
+
+.letter { 
+	color: #3f86e0;      
+}
+.letter2 { 
+	color: #e8036b;      
+}
+
+#costel{
+	position: relative;
+	width: 370px;
+	height: 450px;	
+}
+
+#prod {
+	display: block;
+	position: absolute;
+	background: url(../images/substrate.png); 
+	background-size: 100%;
+	width: 370px;
+	height: 450px;
+}
+
+#prod2 {
+	display: block;
+	position: absolute;
+	background: url(../images/substrate.png) repeat-y; 
+	background-size: 100%;
+	width: 370px;
+	height: 450px;
+	left: 375px;
+}
+
+#prod3 {
+	display: block;
+	position: absolute;
+	background: url(../images/substrate.png) repeat-y; 
+	background-size: 100%;
+	width: 370px;
+	height: 450px;
+	left: 755px;
+}
+
+#prod4 {
+	display: block;
+	position: absolute;
+	background: url(../images/substrate.png) repeat-y; 
+	background-size: 100%;
+	width: 370px;
+	height: 450px;
+	top: 465px;
+}
+
+#prod5 {
+	display: block;
+	position: absolute;
+	background: url(../images/substrate.png) repeat-y; 
+	background-size: 100%;
+
+	width: 370px;
+	height: 450px;
+	top: 465px;
+	left: 375px;
+}
+
+#prod6 { 
+	display: block;
+	position: absolute;
+	background: url(../images/substrate.png) repeat-y; 
+	background-size: 100%;
+
+	width: 370px;
+	height: 450px;
+	top: 465px;
+	left: 755px;
+}
+
+#prod7 { 
+	display: block;
+	position: absolute;
+	background: url(../images/substrate.png) repeat-y; 
+	background-size: 100%;
+
+	width: 370px;
+	height: 450px;
+	top: 930px;
+}
+
+#prod8 { 
+	display: block;
+	position: absolute;
+	background: url(../images/substrate.png) repeat-y; 
+	background-size: 100%;
+
+	width: 370px;
+	height: 450px;
+	top: 930px;
+	left: 375px;
+}
+
+#prod9{ 
+	display: block;
+	position: absolute;
+	background: url(../images/substrate.png) repeat-y; 
+	background-size: 100%;
+
+	width: 370px;
+	height: 450px;
+	top: 930px;
+	left: 755px;
+}
+
+#product_name{
+	position: absolute;
+	text-align: center;
+	font-size: 22px;
+	width: 350px;
+	height: 30px;
+	top: 10px;
+}
+
+
+#product_video{
+	position: absolute;
+	top: 40px;
+	left: 25px;
+	width: 320px;
+	height: 195px;	
+}
+
+#product_photo{
+	top: 30px;
+	left: 250px;
+	width: 120px;
+	height: 180px;
+}
+img.big {
+	cursor: pointer; 
+	max-width: 110px;}
+img.big:hover {
+	max-width: none;}
+
+#navigation{
+	position: relative;
+	top: -50px;
+	width: 650px; 
+	margin: 0 auto; 
+	padding: 10px; 
+	text-align: left; 
+}
+
+ul{
+	border: 0; 
+	margin: 0; 
+	padding: 0;}
+#pagination-digg li{
+	border: 0; 
+	margin: 0; 
+	padding: 0;
+	font-size: 25px;
+	list-style: none;
+	margin-right: 2px;
+}
+#pagination-digg a{
+	border: solid 1px #9aafe5;
+	margin-right: 2px;
+}
+#pagination-digg .previous-off,
+#pagination-digg .next-off {
+
+	color: #888888;
+	display: block;
+	float: left;
+	font-weight: bold;
+	margin-right: 2px;
+	padding: 0px 2px;
+}
+#pagination-digg .next a,
+#pagination-digg .previous a {
+	font-weight: bold;
+}
+#pagination-digg .active{
+	background: #2e6ab1;
+	color: #FFFFFF;
+	font-weight: bold;
+	display: block;
+	float: left;
+	padding: 4px 6px;
+}
+#pagination-digg a:link,
+#pagination-digg a:visited {
+	color: #0e509e;
+	display: block;
+	float: left;
+	padding: 3px 6px;
+	text-decoration: none;
+}
+#pagination-digg a:hover{
+	border: solid 1px #0e509e;
+}
+
+
+#carouselLeft{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	cursor: pointer;
+}
+
+#carouselRight{
+	position: absolute;
+	top: 180px;
+	left: 0px;
+	cursor: pointer;
+}
+
+#product_price{
+	position: absolute;
+	text-align: center;
+	font-size: 24px;
+	left: 100px;	
+}
+#product_discr{
+	position: absolute;
+	left: 20px;
+	top: 235px;	
+	
+}
+TABLE{
+	text-align: left;
+	display: table;
+	border-collapse: separate;
+	border-spacing: 2px;
+	font-size: 18px;
+}
+#product_discr1{
+	display: block;
+	position: absolute;
+	font-size: 18px;
+	width: 330px;
+}
+  
+ 
+#middle:after {
+	content: '.';
+	clear: both;
+	visibility: hidden;
+	height: 0;
+}
+
+.mid{
+	width: 1120px; 
+	margin: 0 auto; 
+	padding: 10px; 
+	text-align: left; 
+	top:400px;
+}
+.menu {
+	display: block;
+	position: absolute;
+	margin: auto;
+	top: 430px;
+	width: 50%;
+	height: auto;
+}
+ 
+* {
+	margin: 0;
+	padding: 0;
+}
+#disabledlink {
+	pointer-events: none;
+	cursor: default; 
+	color: #346455; 
+}
+#home{
+	position: relative;
+	top: -50px;
+	width: 1140px;
+	margin: 0 auto; 
+	padding: 10px; 
+	text-align: left;
+
+	height: 500px;
+	background: url(../images/down.png); 
+	background-size: 100%;
+
+}
+.zagolovok{
+	position: relative;
+	left: 70px;
+	top: 25px;
+	font-weight: bolder;
+	font-size: 20px;
+}
+.text{
+	position: relative;
+	left: 40px;
+	top: 80px;
+	width: 765px;
+	font-size: 14px;
+}
+.button{
+	position: relative;
+	left: 850px;
+}
+.icons{
+	position: relative;
+	left: 2px;
+	top: 40px;	
+}
+.reklam{
+	position: relative;
+	left: -10px;
+	top: 140px;	
+}
+#low{
+	position: relative;
+	left: 430px;
+	top: 600px;	
+}
+.shape1{
+
+	left: -200px;
+	top: 500px;
+}
+.shape2{
+
+	left: 910px;
+	top: 500px;
+}
+#sort{
+	position: absolute;
+	top: -55px;	
+	left: 20px;
+}
+#filter{
+	background: #f8f8f8;
+}
