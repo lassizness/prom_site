@@ -1,7 +1,34 @@
 <?php
 if(isset($_GET['cat'])){
-	if(!isset($_GET['page'])&&($_GET['cat']!="home")){header( "Refresh: 0; url=/?cat=".$_GET['cat']."&page=1");exit;}	 
+	if(!isset($_GET['page'])&&($_GET['cat']!="home")&&($_GET['cat']!="404")){header( "Refresh: 0; url=/?cat=".$_GET['cat']."&page=1");exit;}	 
 	switch($_GET['cat']){
+		case "404":
+		echo'
+		<div class="mid" style="height:10px">
+		<div class="menu">
+		<a href="/?cat=single_lines" class="rollover" style="position:absolute;left:-15px;"><img src="images/single.png"  style="height: 80px;position:absolute;left:50px;top:-140px;"
+		<a href="/?cat=single_lines"><text style="position:absolute;left:60px;top:-50px;font-size:18px;font-weight:10;white-space: nowrap;text-align: center;"<><font color="red">ОДИНОЧНЫЕ<p>линии</font></p></a></a>
+
+		<a href="/?cat=professional_batteries" class="rollover" style="position:absolute;left:215px;"><img src="images/prof.png"  style="height: 80px;position:absolute;left:90px;top:-140px;"
+		<a href="/?cat=professional_batteries"><text style="position:absolute;left:20px;top:-50px;font-size:18px;font-weight:10;white-space: nowrap;text-align: center;"<><font color="red">ПРОФЕССИОНАЛЬНЫЕ<p>батареи</p></font></a></a></font>
+
+		<a href="/?cat=single" class="rollover" style="position:absolute;left:453px;"><img src="images/singles.png"  style="height: 80px;position:absolute;left:65px;top:-140px;"
+		<a href="/?cat=single"><text style="position:absolute;left:73px;top:-50px;font-size:18px;font-weight:10;white-space: nowrap;text-align: center;"<><font color="red">СИНГЛЫ</font></a></a>
+
+		<a href="/?cat=balls"  class="rollover" style="position:absolute;left:665px;"><img src="images/shar.png"  style="height: 80px;position:absolute;left:70px;top:-140px;"
+		<a href="/?cat=balls"><text style="position:absolute;left:75px;top:-50px;font-size:18px;font-weight:10;white-space: nowrap;text-align: center;"<><font color="red">ШАРЫ</font></a></a>
+
+
+		<a href="?cat=stage_pyrotechnics" class="rollover" style="position:absolute;left:865px;"><img src="images/scenic.png"  style="height: 80px;position:absolute;left:60px;top:-140px;"
+		<a href="?cat=stage_pyrotechnics"><text style="position:absolute;left:40px;top:-50px;font-size:18px;font-weight:10;white-space: nowrap;text-align: center;" ><font color="red">СЦЕНИЧЕСКАЯ<p>пиротехника</font></p></a></a>
+		</div>
+		</div><div id="error404">
+		<img src="images/404.png" style="width:100%;">
+		</div></div>';
+		include_once("include/footer.php");
+		exit;
+		break;
+		
 		case "single_lines":
 		$qyerycount="SELECT * FROM `singleline`";
 		
@@ -55,7 +82,7 @@ if(isset($_GET['cat'])){
 
 		break;
 		case "single":
-		$qyerycount="SELECT * FROM `single`";
+		$qyerycount="SELECT * FROM `singl`";
 		if($_GET['page']>1){
 			$lim=9*($_GET['page']-1);
 			$query="SELECT * FROM `singl` LIMIT ".$lim.",9";}else{
@@ -124,16 +151,12 @@ if(isset($_GET['cat'])){
 		break;
 		case "home":
 		echo'<div id="home">
-
 		<div class="zagolovok">
-		<a>Наши преимущества</a>
+		<h1>Наши преимущества</h1>
 		</div>
 		<div class="text">
-		<a>Магазины «Феерия.ру» – это качественная сертифицированная пиротехника в Санкт-Петербурге, области и регионах России.</br> 
-		Мы предлагаем богатый ассортимент фейерверков на любые запросы и бюджет - от недорогих ракет и бенгальских огней для </br> 
-		семейных торжеств до крупных батарей салютов для масштабных мероприятий. В магазинах действует дисконтная система,</br> 
-		проводятся распродажи и акции, благодаря чему даже в предновогодний сезон можно купить пиротехнику со скидкой.</br>
-		Интернет-магазин пиротехники с бесплатной доставкойдоставкой на дом.</a></br>
+		<a>Профессиональный фейерверк- это творческий и в тоже время трудоемкий процесс. На подготовку только одного заказа требуется огромное количество сил и времени, поэтому для компаний, занимающихся пиротехническими изделиями очень важно, чтобы реализуемый товар был надежный и сертифицированный. Наша компания является импортером высококачественной пиротехнической продукции. У нас вы можете найти широкий ассортимент изделий.
+		</a></br>
 		</div>
 		<div class="button">
 		<a href="?cat=balls" ><img src="images/button.png"></br></a>
@@ -145,8 +168,40 @@ if(isset($_GET['cat'])){
 		<img src="images/reklam.png" ></br>
 		</div>
 		</div>
-		</br></br>
-		';
+
+		<div id="low">
+		<div id="lol">
+		<img src="images/lol.png" ></br>
+		</div>
+		<section class="center slider">';
+		$lolquery=("SELECT * FROM pli");
+		$lolnews = mysql_query($lolquery);
+		$lolrow = @mysql_fetch_assoc($lolnews, MYSQL_ASSOC);
+		$lolrowcount=mysql_num_rows(mysql_query($lolquery));
+
+		while($lolrow = mysql_fetch_assoc($lolnews, MYSQL_ASSOC)){
+			echo'<div>
+			<a href="'.$lolrow['link'].'" target="_blank">
+			<img src="images/items/'.$lolrow['name'].'.png"  ></a>
+			</div>';
+		}
+		 
+		echo'
+		</section>
+ 
+		<script src="/slick/jquery-2.2.0.min.js" type="text/javascript"></script>
+		<script src="/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		$(".center").slick({
+		lazyLoad:true,
+		infinite: true,
+		centerMode: true,
+		speed: 1,
+		slidesToShow: 3,
+		slidesToScroll: 1
+		});
+		</script>
+		</div>';
 		include_once("include/footer.php");
 		exit;
 		break;
@@ -193,8 +248,16 @@ if(isset($_GET['cat'])){
 	<a href="?cat=stage_pyrotechnics" class="'.$tag4.'" style="position:absolute;left:865px;"><img src="images/scenic.png"  style="height: 80px;position:absolute;left:60px;top:-140px;"
 	<a href="?cat=stage_pyrotechnics"><text style="position:absolute;left:40px;top:-50px;font-size:18px;font-weight:10;white-space: nowrap;text-align: center;" ><font color="red">СЦЕНИЧЕСКАЯ<p>пиротехника</font></p></a></a>
 	</div>';
-	echo'<div class="field_prod">
-	<div id="sort">
+	echo'<div class="field_prod">';
+
+	if($_GET['cat']=='balls'){
+		echo'<div id="filter">	
+		
+		<div id="slider"></div>
+		
+		</div>';}
+		
+	echo'<div id="sort">
 	<a href="?cat=home" ><img src="images/home.png" height="50px" width="200px"></br></a>
 	</div>';
 	if($rowcount2>0){
@@ -738,8 +801,8 @@ if(isset($_GET['cat'])){
 					';}}
 
 			if($_GET['page']!=ceil($rowcount/9)){
-				if(isset($_GET['short'])){$short="short=";}
-				echo'<li class="next" ><a href="?cat='.$_GET['cat'].'&page='.$next.'&'.$short.'">Вперед »</a></li></ul>';}else{
+				echo'<li class="next" ><a href="?cat='.$_GET['cat'].'&page='.$next.'
+				">Вперед »</a></li></ul>';}else{
 				echo'<li class="next" ><a href="?cat='.$_GET['cat'].'&page='.$next.'" class="disabled">Вперед »</a></li></ul>';
 			}
 			echo'</div></br></br>';}}

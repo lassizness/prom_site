@@ -1,7 +1,10 @@
 @import url("http://fonts.googleapis.com/css?family=Lato:400,700");
 html{ 
-	overflow-x: hidden;}
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;}
 body {	
+	display: block;
 	background: url(../images/fone.png) repeat;
 	background-size: 100%;	
 	font-family: Lato;
@@ -9,20 +12,29 @@ body {
 }
 
 header{
-	display: block;
-	width: auto;
+	position: relative;
 	height: 500px;
 	background: url(../images/toppic.png) no-repeat,url(../images/city.png) no-repeat;  
 	background-size: 100%;	
+	margin: 0 auto;
+	margin-top: 0px;
 }
 
+#headerInner {
+	background-repeat: no-repeat;
+	background-image: url(../images/logo.png); 
+	position: relative;
+	left: 205px;
+	width: 700px;
+	height: 250px;
+	margin: 0 auto;
+	margin-top: 0px;
+}
 #ss{
 	display: block;
 	position: relative;
 	left: -115px;
 	top: 4px;
-
-
 }
 
 footer{
@@ -61,17 +73,7 @@ a.rollover2 {
 	height: 5px; 
 } 
    
-#headerInner {
-	background-repeat: no-repeat;
-	background-image: url(../images/logo.png);
- 
-	position: relative;
-	left: 205px;
-	width: 700px;
-	height: 250px;
-	margin: 0 auto;
-	margin-top: 0px;
-}
+
 .toppict {
 	max-width: 550px;
 }
@@ -337,7 +339,7 @@ TABLE{
 	margin: 0 auto; 
 	padding: 10px; 
 	text-align: left; 
-	top:400px;
+	top: 400px;
 }
 .menu {
 	display: block;
@@ -400,18 +402,29 @@ TABLE{
 }
 #low{
 	position: relative;
-	left: 430px;
-	top: 600px;	
+	top:-20px;
+	height: 605px;
+	margin: 0 auto;
+	margin-top: 0px;
+}
+#lol{
+	position: relative;	
+	/*top:-3px;
+	left:-10px;*/
+	top:-10px;
+	left:30px;
+	width: 530px;
+	height: 615px;
+	margin: 0 auto;
+	margin-top: 0px;
 }
 .shape1{
-
-	left: -200px;
-	top: 500px;
+	position: absolute;
+	top: -300px;
 }
 .shape2{
-
-	left: 910px;
-	top: 500px;
+	position: absolute;
+	left: 300px;
 }
 #sort{
 	position: absolute;
@@ -419,5 +432,17 @@ TABLE{
 	left: 20px;
 }
 #filter{
+	position: absolute;
 	background: #f8f8f8;
+	height: 400px;
+	width: 300px;
+	left: 30px;
+}
+
+#error404{
+	position: relative;
+	top: 50px;	
+	height: 600px;
+	width: 960px;
+	margin: 0 auto;
 }

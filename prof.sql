@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Авг 25 2017 г., 11:06
--- Версия сервера: 10.1.21-MariaDB
--- Версия PHP: 5.6.30
+-- Время создания: Сен 13 2017 г., 12:16
+-- Версия сервера: 10.1.25-MariaDB
+-- Версия PHP: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -194,6 +196,63 @@ CREATE TABLE `batter` (
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `pli`
+--
+
+CREATE TABLE `pli` (
+  `name` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `link` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `pli`
+--
+
+INSERT INTO `pli` (`name`, `link`) VALUES
+('CB081', 'http://123pli.ru/catalog/batarei_salyutov/sdelano_s_dushoy.html'),
+('CB082', 'http://123pli.ru/catalog/batarei_salyutov/salyut_dlya_vashego_prazdnika.html'),
+('CB083', 'http://123pli.ru/catalog/batarei_salyutov/ba_bakh_trakh_tara_rakh_dyshch_bydyshch_vau_.html'),
+('CB084', 'http://123pli.ru/catalog/krupnye_batarei_salyutov/nochnoy_drayv_sv084.html'),
+('CB085', 'http://123pli.ru/catalog/batarei_salyutov/almaznaya_pyl.html'),
+('CB086', 'http://123pli.ru/catalog/batarei_salyutov/4kh4.html'),
+('CB087', 'http://123pli.ru/catalog/batarei_salyutov/posledniy_geroy.html'),
+('CB088', 'http://123pli.ru/catalog/batarei_salyutov/letuchiy_gollandets.html'),
+('CB089', 'http://123pli.ru/catalog/batarei_salyutov/sto_zalpov_schastya.html'),
+('CB090', 'http://123pli.ru/catalog/krupnye_batarei_salyutov/pylayushchee_nebo.html'),
+('CB091', 'http://123pli.ru/catalog/krupnye_batarei_salyutov/more_emotsiy.html'),
+('CB101', 'http://123pli.ru/catalog/batarei_salyutov/podarok_synu.html'),
+('CB102', 'http://123pli.ru/catalog/krupnye_batarei_salyutov/vybor_professionalov_sv102.html'),
+('CB103', 'http://123pli.ru/catalog/batarei_salyutov/chernaya_akula.html'),
+('CB104', 'http://123pli.ru/catalog/krupnye_batarei_salyutov/agent_007.html'),
+('CB105', 'http://123pli.ru/catalog/krupnye_batarei_salyutov/vip_korparativ.html'),
+('CB106', 'http://123pli.ru/catalog/krupnye_batarei_salyutov/udivi_gostey_svoikh.html'),
+('CB120', 'http://123pli.ru/catalog/batarei_salyutov_vip/piro_bezumie_sv120.html'),
+('CB121', 'http://123pli.ru/catalog/batarei_salyutov/veselaya_semeyka_sv121.html'),
+('CB122', 'http://123pli.ru/catalog/batarei_salyutov/tsarskie_zalpy.html'),
+('CB123', 'http://123pli.ru/catalog/batarei_salyutov/zvezda_zhelaniy.html'),
+('CB124', 'http://123pli.ru/catalog/batarei_salyutov/samyy_luchshiy_den.html'),
+('CB125', 'http://123pli.ru/catalog/batarei_salyutov/nochnaya_skazka.html'),
+('CB126', 'http://123pli.ru/catalog/batarei_salyutov/piratskie_zabavy.html'),
+('CB127', 'http://123pli.ru/catalog/batarei_salyutov/vezhlivye_lyudi.html'),
+('CB128', 'http://123pli.ru/catalog/batarei_salyutov/rossiyskaya_imperiya.html'),
+('CB129', 'http://123pli.ru/catalog/batarei_salyutov/blestyashchiy_vecher.html'),
+('CB131', 'http://123pli.ru/catalog/krupnye_batarei_salyutov/prazdnik_po_russki_sv131.html'),
+('CB133', 'http://123pli.ru/catalog/batarei_salyutov_vip/prestol_imperatora_sv133.html'),
+('CB134', 'http://123pli.ru/catalog/batarei_salyutov/prinosyashchiy_udachu_sv134.html'),
+('CB135', 'http://123pli.ru/catalog/batarei_salyutov/roskoshnyy_salyut.html'),
+('CB136', 'http://123pli.ru/catalog/batarei_salyutov/prazdnik_budet_1.html'),
+('CB137', 'http://123pli.ru/catalog/batarei_salyutov/raz_dva_tri_pli.html'),
+('CB138', 'http://123pli.ru/catalog/krupnye_batarei_salyutov/ognennyy_zakat_sv138.html'),
+('CB139', 'http://123pli.ru/catalog/batarei_salyutov_vip/vysotnyy_salyut.html'),
+('CB150', 'http://123pli.ru/catalog/batarei_salyutov/vyshe_tolko_zvezdy.html'),
+('CB151', 'http://123pli.ru/catalog/krupnye_batarei_salyutov/tyazhelaya_artilleriya_sv151.html'),
+('CB200', 'http://123pli.ru/catalog/batarei_salyutov/lyubimoy_dochke.html'),
+('CB201', 'http://123pli.ru/catalog/batarei_salyutov/prazdnik_neposlushaniya.html'),
+('CB202', 'http://123pli.ru/catalog/batarei_salyutov/khit_prodazh.html');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `scenepir`
 --
 
@@ -265,6 +324,14 @@ ALTER TABLE `batter`
   ADD UNIQUE KEY `id` (`id`) USING BTREE;
 
 --
+-- Индексы таблицы `pli`
+--
+ALTER TABLE `pli`
+  ADD PRIMARY KEY (`name`),
+  ADD KEY `name` (`name`),
+  ADD KEY `name_2` (`name`);
+
+--
 -- Индексы таблицы `scenepir`
 --
 ALTER TABLE `scenepir`
@@ -281,6 +348,7 @@ ALTER TABLE `singl`
 --
 ALTER TABLE `singleline`
   ADD UNIQUE KEY `id` (`id`) USING BTREE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
