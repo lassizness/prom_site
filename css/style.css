@@ -20,10 +20,25 @@ header{
 	margin-top: 0px;
 }
 
+#headlink{
+	position: relative;
+	display: block;
+	left:-350px;
+	height: 20px;
+    width: 350px;
+margin: 0 auto;
+}
+ a { 
+    text-decoration: none;
+   } 
+ #letterlink{
+ 	color: #ffffff;
+ }
 #headerInner {
 	background-repeat: no-repeat;
 	background-image: url(../images/logo.png); 
 	position: relative;
+	top:-20px;
 	left: 205px;
 	width: 700px;
 	height: 250px;
@@ -43,10 +58,18 @@ footer{
 	margin: auto;
 	bottom: 0%;
 	width: 100%;
-	height: 120px;
+	height: 30px;
 	background: url(../images/bot.png) repeat;
 	background-size: 100%;	
 } 
+#copy{
+	display: block;
+	position: relative;
+	top:5px;
+	width: 500px;
+	height: 10px;
+	margin: 0 auto;	
+}
 a.rollover {
 	background: url(../images/grey.png); 
 	background-size: 100%;
@@ -86,10 +109,13 @@ a.rollover2 {
 }
 
 .letter { 
-	color: #3f86e0;      
+	color: #183d87;      
 }
 .letter2 { 
-	color: #e8036b;      
+	color: red;      
+}
+.letter3 { 
+	color: red;      
 }
 
 #costel{
@@ -101,7 +127,7 @@ a.rollover2 {
 #prod {
 	display: block;
 	position: absolute;
-	background: url(../images/substrate.png); 
+	background: url(../images/substrate.png) repeat-y; 
 	background-size: 100%;
 	width: 370px;
 	height: 450px;
@@ -142,7 +168,6 @@ a.rollover2 {
 	position: absolute;
 	background: url(../images/substrate.png) repeat-y; 
 	background-size: 100%;
-
 	width: 370px;
 	height: 450px;
 	top: 465px;
@@ -407,6 +432,12 @@ TABLE{
 	margin: 0 auto;
 	margin-top: 0px;
 }
+#lowabout{
+	position: relative;
+	height: 605px;
+	margin: 0 auto;
+	margin-top: 0px;
+}
 #lol{
 	position: relative;	
 	/*top:-3px;
@@ -445,4 +476,67 @@ TABLE{
 	height: 600px;
 	width: 960px;
 	margin: 0 auto;
+}
+#okfilter{
+	position: relative;
+	height: 50px;
+	width: 210px;
+	left: 20px;
+}
+#about{
+	position: relative;
+	display: block;
+	top: 100px;
+	height: 550px;
+	width: 960px;
+	margin: 0 auto;
+}
+p{
+	position: relative;
+	text-indent: 20px;
+}
+#gohome{
+	position: relative;
+	top:85px;
+	left:-350px;
+	display: block;
+	width: 400px;
+	margin: 0 auto;
+	
+}
+.cont {
+	position:relative;
+	top:100px;
+	left:430px;
+        padding-top:20px;
+        width:930px;
+        padding-left:60px;
+        height:570px;
+        background-image:url(../images/subfon.png);
+         
+        /*оформление текста*/
+        color:#000;
+       
+        font-size:30px; 
+    }
+.info{
+	margin-top:50px;
+	margin-left:50px;
+	font-size:20px; 
+	}
+	.map{
+		position:absolute;
+		left:360px;
+		top:30px;
+	}
+f{
+	color:blue;
+}	
+.works{
+	position: relative;
+	display: block;
+	width: 960px;
+	margin: 0 auto;
+	margin-left:430px;
+	margin-top:100px;
 }

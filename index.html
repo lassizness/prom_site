@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Slider - Range slider</title>
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/styleui.css">
+  <script src="js/jquery-1.12.4.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#slider-range-price" ).slider({
+      range: true,
+      min: 0,
+      max: 1500,
+      values: [ 0, 1500 ],
+      slide: function( event, ui ) {
+        $( "#amountprice" ).val( "Руб " + ui.values[ 0 ] + " - Руб " + ui.values[ 1 ] );
+      }
+    });
+    $( "#amountprice" ).val( "Руб " + $( "#slider-range-price" ).slider( "values", 0 ) +
+      " - Руб " + $( "#slider-range-price" ).slider( "values", 1 ) );
+  } );
+  
+  
+  $( function() {
+    $( "#slider-range-diameter" ).slider({
+      range: true,
+      min: 2,
+      max: 6,
+      values: [ 2, 6 ],
+      slide: function( event, ui ) {
+        $( "#amountdiameter" ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+      }
+    });
+    $( "#amountdiameter" ).val( "" + $( "#slider-range-diameter" ).slider( "values", 0 ) +
+      " - " + $( "#slider-range-diameter" ).slider( "values", 1 ) );
+  } );
+  </script>
+</head>
+<body>
+<div id="filter">
+ <div id="filter1">
+<p>
+  <label for="amountprice">Цена:</label>
+  <input type="text" id="amountprice" readonly style="border:0; color:#183d87; font-weight:bold;">
+</p> 
+<div id="slider-range-price"></div> 
+ <p>
+  <label for="amountdiameter">Калибр:</label>
+  <input type="text" id="amountdiameter" readonly style="border:0; color:#183d87; font-weight:bold;">
+</p> 
+<div id="slider-range-diameter"></div>
+
+</div>
+<div id="filterbutton">
+<a href="sample.html"><img src="images/accept.png" width="150" 
+height="40" alt="Применить"></a></div>
+</div> 
+</body>
+</html>

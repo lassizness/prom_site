@@ -52,7 +52,7 @@
                 centerPadding: '50px',
                 
                 customPaging: function(slider, i) {
-                    return $('<button type="button" />').text(i + 1);
+                    return $('<button type="button" />').text(i);
                 },
                
                 draggable: false,
