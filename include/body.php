@@ -1,8 +1,8 @@
 <?php
 $minp=0;
 $maxp=90000;
-$mind=0;
-$maxd=6;
+$mind="2.5";
+$maxd="2.5";
 
 /*
 if(isset($_POST['amountprice'])){
@@ -463,8 +463,11 @@ if(isset($_GET['cat'])){
 		case 3:
 		$height=$height+465*3;
 		break;
+		default:
+			$height=$height+465*($zz-1);
+		break;
 	}
-
+echo $zz;
 	echo'<div class="mid" style="height:'.$height.'px">';
 	
 	echo'<div class="menu">
@@ -488,10 +491,11 @@ if(isset($_GET['cat'])){
 		echo'<div id="filter1">
 		<div id="filter2"><p>
 		<form action="action.php?" method="post">
-		<p><b>Калибр:</b></p>
-		<p><input name="calibr" type="radio" value="all" checked >Все</p>';
-		echo'<p><input name="calibr" type="radio" value="2.5"';if(isset($_GET['calibr'])){if($_GET['calibr']=="2.5"){ echo 'checked';
-			}} echo'>2.5"</p>';
+		<p><b>Калибр:</b></p>';
+		
+		/*echo'<p><input name="calibr" type="radio" value="2.5"';if(isset($_GET['calibr'])){if($_GET['calibr']=="2.5"){ echo 'checked';
+			}} echo'>2.5"</p>';*/
+		echo'<p><input name="calibr" type="radio" value="2.5" checked >2.5"</p>';
 		echo' <p><input name="calibr" type="radio" value="3"';if(isset($_GET['calibr'])){if($_GET['calibr']=="3"){ echo 'checked';
 			}} echo'>3"</p>';
 		echo' <p><input name="calibr" type="radio" value="4"';if(isset($_GET['calibr'])){if($_GET['calibr']=="4"){ echo 'checked';
@@ -500,6 +504,8 @@ if(isset($_GET['cat'])){
 			}} echo '>5"</p>';
 		echo' <p><input name="calibr" type="radio" value="6"';if(isset($_GET['calibr'])){if($_GET['calibr']=="6"){ echo 'checked';
 			}} echo '>6"</p>';
+		echo'<p><input name="calibr" type="radio" value="all"'; if(isset($_GET['calibr'])){if($_GET['calibr']=="all"){echo 'checked';
+			}} echo'> Все</p>';
 		echo'</div>
 		<div id="okfilter">
 		<input type="image" src="images/accept.png" width=210px height=40px; value="Проверить"">
@@ -516,15 +522,18 @@ if(isset($_GET['cat'])){
 	$topp=1;
 	$leftt=1;
 	if($rowcount2>0){
-		do{ 
+		while($row = mysql_fetch_assoc($news, MYSQL_ASSOC)){ 
 			$xx++;
-			if($xx==1){
+			if(($xx==1)||($xx==4
+			)){
 				$leftt=1;	
 			}else{
 				$leftt=$leftt+375;
 			}			
-			if($xx==3){
+			if($xx==4){
 				$topp=$topp+465;	
+				$yy++;
+				$xx=0;	
 			}
 			echo'
 			<div id="prod" style="left:'.$leftt.'px; top:'.$topp.'px;">
@@ -563,11 +572,8 @@ if(isset($_GET['cat'])){
 			<span class="letter"><b>Описание:</b></span></br>'.$row['effect'].'</div>
 			</div>
 			</div>';
-			if($xx==3){
-				$yy++;
-				$xx=0;	
-			}		
-		}while($row = mysql_fetch_assoc($news, MYSQL_ASSOC)) ;
+		
+		}
 	}else{echo'</br><span class="letter2" ><strong>К сожалению, в данный момент, в данной категории нет товара.</strong></span>';}
 	echo'</div><!--Закрывает поле с товаром--> </div><!-- Конец контент -->';
 	/*if($_GET['cat']!="home"){
