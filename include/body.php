@@ -573,7 +573,7 @@ if(isset($_GET['cat'])){
 			</div>';
 		
 		}while($row = mysql_fetch_assoc($news, MYSQL_ASSOC));
-	}else{echo'<div id="noitems"><img src="images/noitems.png"><div id="noitems1"><div id="noitems2"><span id="textnoitems"><b><p>В данный момент в этой категории нет товара.</p><p>Что бы продолжать работу с сайтом, перейдите в другую категорию товаров или на главную страницу сайта.</p></b></span></div></div></div>';}
+	}else{echo'<div id="noitems" style="top:33px;left:10px;"><img src="images/noitems.png" ><div id="noitems1"><div id="noitems2"><span id="textnoitems"><b><p>В данный момент в этой категории нет товара.</p><p>Что бы продолжать работу с сайтом, перейдите в другую категорию товаров или на главную страницу сайта.</p></b></span></div></div></div>';}
 	echo'</div><!--Закрывает поле с товаром--> </div><!-- Конец контент -->';
 	
 
