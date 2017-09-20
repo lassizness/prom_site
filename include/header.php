@@ -5,62 +5,26 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=0.1, maximum-scale=2.0, user-scalable=yes">
 <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
 <link href="css/style.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="slick/slick.css">
 <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
- <link rel="stylesheet" href="css/jquery-ui.css">
-  <link rel="stylesheet" href="css/styleui.css">
-  <script src="js/jquery-1.12.4.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script>
-  var mins=0,maxs=1500;
-  $( function() { 	
-    $( "#slider-range-price" ).slider({
-      range: true,
-      min: 0,
-      max: 1500,
-	  values: [ mins,maxs],
-	        slide: function( event, ui ) {
-        $( "#amountprice" ).val( "Руб " + ui.values[ 0 ] + " - Руб " + ui.values[ 1 ] );
-      }
-    });  
-    $( "#amountprice" ).val( "Руб " + $( "#slider-range-price" ).slider( "values", 0 ) +
-      " - Руб " + $( "#slider-range-price" ).slider( "values", 1 ) );
-      
-      /*$( "#slider-range-price" ).slider( "values", 0 );
-      maxs=$( "#slider-range-price" ).slider( "values", 1 );*/
-  } );
-  
-  
-  $( function() {
-    $( "#slider-range-diameter" ).slider({
-      range: true,
-      min: 2,
-      max: 6,
-      values: [ 2, 6 ],
-      slide: function( event, ui ) {
-        $( "#amountdiameter" ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-      }
-    });
-    $( "#amountdiameter" ).val( "" + $( "#slider-range-diameter" ).slider( "values", 0 ) +
-      " - " + $( "#slider-range-diameter" ).slider( "values", 1 ) );
-  } );
-  </script>
 <style >
 *{
 box-sizing: border-box;
 }
 .slider {
+position:relative;
+display:block;
 overflow:hidden;
-top:-307px;
+top:-297px;
 width:1150px;
 left:-100px;
 margin: 0 auto;
 }
 .slick-slide {
 margin: 0px 126px;
-/*left:-600px;*/
 } 	
 .slick-active img {
 width:200px;
@@ -101,13 +65,13 @@ opacity: 1;
 <!-- Начало хидер -->
 
 <header class="header">
-<div id="headlink">
 
-<a href="/?cat=about"><b><span id="letterlink">О нас&nbsp;</b></span> <a>
-<a href="/?cat=engineering_works"><b><span id="letterlink">Покупателю&nbsp;</b></span> <a>
-<a href="/?cat=engineering_works"><b><span id="letterlink">Акции &nbsp;</b></span><a>
-<a href="/?cat=engineering_works"><b><span id="letterlink">Новости &nbsp;</b></span><a>
-<a href="/?cat=contact"><b><span id="letterlink">Контакты &nbsp;</b></span><a>
+<div id="headlink">
+<a href="/?cat=about"><span id="letterlink"><strong>О нас&nbsp;</strong></span> <a>
+<a href="/?cat=engineering_works"><span id="letterlink"><strong>&nbsp;Покупателю&nbsp;</strong></span> <a>
+<a href="/?cat=engineering_works"><span id="letterlink"><strong>&nbsp;Акции &nbsp;</strong></span><a>
+<a href="/?cat=engineering_works"><span id="letterlink"><strong>&nbsp;Новости &nbsp;</strong></span><a>
+<a href="/?cat=contact"><span id="letterlink"><strong>&nbsp;Контакты &nbsp;</strong></span><a>
 </div>
 <div id="headerInner">
 </div>
