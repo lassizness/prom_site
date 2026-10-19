@@ -18,8 +18,12 @@ jobs:
         run: php tests/catalog_test.php
       - name: Docker integration
         run: |
+          set -euxo pipefail
+          trap 'docker compose logs --tail=80' ERR
           docker compose up --build -d --wait
+          docker compose ps
           curl --fail --silent --show-error 'http://localhost:8080/?cat=home' -o /tmp/home.html
+          head -c 600 /tmp/home.html
           grep -q 'Наши преимущества' /tmp/home.html
           curl --fail --silent --show-error 'http://localhost:8080/?cat=balls&page=1' -o /tmp/balls.html
           grep -q 'product-card' /tmp/balls.html
