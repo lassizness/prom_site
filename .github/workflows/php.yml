@@ -16,3 +16,14 @@ jobs:
         run: find . -name '*.php' -print0 | xargs -0 -n1 php -l
       - name: Catalog tests
         run: php tests/catalog_test.php
+      - name: Docker integration
+        run: |
+          docker compose up --build -d --wait
+          curl --fail --silent --show-error 'http://localhost:8080/?cat=home' | grep -q 'Наши преимущества'
+          curl --fail --silent --show-error 'http://localhost:8080/?cat=balls&page=1' | grep -q 'product-card'
+          curl --fail --silent --show-error 'http://localhost:8080/?cat=balls&page=2&calibr=3&short=price' | grep -q 'catalog-page'
+          status=$(curl --silent --output /dev/null --write-out '%{http_code}' 'http://localhost:8080/?cat=does-not-exist')
+          test "$status" = "404"
+          status=$(curl --silent --output /dev/null --write-out '%{http_code}' 'http://localhost:8080/database/prof.sql')
+          test "$status" = "403"
+          docker compose down -v

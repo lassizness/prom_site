@@ -7,7 +7,7 @@ switch($cat){
 		' . catalogMenu($cat) . '
 		</div><div id="error404">
 		<img src="images/404.png" style="width:100%;">
-		</div></div>';
+		</div>';
 		include_once("include/footer.php");
 		exit;
 		break;

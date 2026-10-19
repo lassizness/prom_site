@@ -9,7 +9,7 @@ ErrorDocument 403 /?cat=404
 
 <IfModule mod_rewrite.c>
 	RewriteEngine On
-	RewriteRule ^(include|database|tests|tools|config|\.github)(/|$) - [F,L,NC]
+	RewriteRule ^(include|database|tests|tools|config|\.github|\.git)(/|$) - [F,L,NC]
 	RewriteRule ^(test\.php|prof\.sql|index\.html)$ - [F,L,NC]
 </IfModule>
 
