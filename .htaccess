@@ -1,3 +1,18 @@
-Options All -Indexes
-ErrorDocument 404 /index.php?cat=404
-ErrorDocument 403 /
+Options -Indexes
+DirectoryIndex index.php
+ErrorDocument 404 /?cat=404
+ErrorDocument 403 /?cat=404
+
+<FilesMatch "^(\\.env|\\.git|composer\\.(json|lock)|README\\.md|Dockerfile|docker-compose\\.yml|phpunit\\.xml)$">
+	Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteRule ^(include|database|tests|tools|config|\\.github)(/|$) - [F,L,NC]
+	RewriteRule ^(test\\.php|prof\\.sql|index\\.html)$ - [F,L,NC]
+</IfModule>
+
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json
+</IfModule>
