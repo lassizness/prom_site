@@ -52,8 +52,8 @@ switch($cat){
 		echo'
 		</section>
  
-		<script src="/slick/jquery-2.2.0.min.js" type="text/javascript"></script>
-		<script src="/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/jquery-3.7.1.min.js" type="text/javascript"></script>
+		<script src="/slick/slick.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 		$(".center").slick({
 		lazyLoad:"ondemand",
@@ -106,8 +106,8 @@ switch($cat){
 		echo'
 		</section>
  
-		<script src="/slick/jquery-2.2.0.min.js" type="text/javascript"></script>
-		<script src="/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/jquery-3.7.1.min.js" type="text/javascript"></script>
+		<script src="/slick/slick.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 		$(".center").slick({
 		lazyLoad:"ondemand",
@@ -183,8 +183,8 @@ switch($cat){
 		echo'
 		</section>
  
-		<script src="/slick/jquery-2.2.0.min.js" type="text/javascript"></script>
-		<script src="/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/jquery-3.7.1.min.js" type="text/javascript"></script>
+		<script src="/slick/slick.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 		$(".center").slick({
 		lazyLoad:"ondemand",
