@@ -44,6 +44,8 @@ switch($cat){
 		<section class="center slider">';
 		$lolnews = $db->query('SELECT name, link FROM pli ORDER BY name')->fetchAll();
 		foreach($lolnews as $lolrow){
+			if(!preg_match('/^[a-zA-Z0-9_-]+$/', $lolrow['name'])) continue;
+			if(!filter_var($lolrow['link'], FILTER_VALIDATE_URL) || !in_array(parse_url($lolrow['link'], PHP_URL_SCHEME), ['http', 'https'], true)) continue;
 			echo'<div><a href="'.htmlspecialchars($lolrow['link'], ENT_QUOTES, 'UTF-8').'" target="_blank" rel="noopener noreferrer"><picture><source type="image/webp" srcset="/image.php?name='.rawurlencode($lolrow['name']).'"><img src="images/items/'.rawurlencode($lolrow['name']).'.png" alt="'.htmlspecialchars($lolrow['name'], ENT_QUOTES, 'UTF-8').'" loading="lazy" decoding="async" width="370" height="220"></picture></a></div>';
 		}
 		 
@@ -202,6 +204,4 @@ switch($cat){
 	}
 	$catalog = new CatalogRepository($db);
 	[$items, $total, $page] = $catalog->getPage($cat, $page, $sort, $diameter);
-	require __DIR__.'/catalog.php';
-}
-?>
+	require __DIR__.'/catalog.php';?>
