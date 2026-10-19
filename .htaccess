@@ -1,7 +1,7 @@
 Options -Indexes
 DirectoryIndex index.php
 ErrorDocument 404 /?cat=404
-ErrorDocument 403 /?cat=404
+ErrorDocument 403 "Forbidden"
 
 <FilesMatch "^(\.env|\.git|composer\.(json|lock)|README\.md|Dockerfile|docker-compose\.yml|phpunit\.xml)$">
 	Require all denied
