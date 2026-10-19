@@ -19,9 +19,12 @@ jobs:
       - name: Docker integration
         run: |
           docker compose up --build -d --wait
-          curl --fail --silent --show-error 'http://localhost:8080/?cat=home' | grep -q 'Наши преимущества'
-          curl --fail --silent --show-error 'http://localhost:8080/?cat=balls&page=1' | grep -q 'product-card'
-          curl --fail --silent --show-error 'http://localhost:8080/?cat=balls&page=2&calibr=3&short=price' | grep -q 'catalog-page'
+          curl --fail --silent --show-error 'http://localhost:8080/?cat=home' -o /tmp/home.html
+          grep -q 'Наши преимущества' /tmp/home.html
+          curl --fail --silent --show-error 'http://localhost:8080/?cat=balls&page=1' -o /tmp/balls.html
+          grep -q 'product-card' /tmp/balls.html
+          curl --fail --silent --show-error 'http://localhost:8080/?cat=balls&page=2&calibr=3&short=price' -o /tmp/filter.html
+          grep -q 'catalog-page' /tmp/filter.html
           status=$(curl --silent --output /dev/null --write-out '%{http_code}' 'http://localhost:8080/?cat=does-not-exist')
           test "$status" = "404"
           status=$(curl --silent --output /dev/null --write-out '%{http_code}' 'http://localhost:8080/database/prof.sql')
