@@ -1,0 +1,33 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: prof
+      DB_USER: prom_site
+      DB_PASSWORD: local-development-only
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: prof
+      MYSQL_USER: prom_site
+      MYSQL_PASSWORD: local-development-only
+      MYSQL_ROOT_PASSWORD: local-root-development-only
+    volumes:
+      - prom_site_db:/var/lib/mysql
+      - ./database/prof.sql:/docker-entrypoint-initdb.d/01_prof.sql:ro
+      - ./database/migrations/20261019_catalog_numeric.sql:/docker-entrypoint-initdb.d/02_catalog.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -plocal-root-development-only --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  prom_site_db:

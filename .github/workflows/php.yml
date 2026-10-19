@@ -1,0 +1,37 @@
+name: PHP checks
+on:
+  push:
+  pull_request:
+jobs:
+  php:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: pdo_mysql, pdo_sqlite, gd
+          coverage: none
+      - name: PHP syntax
+        run: find . -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Catalog tests
+        run: php tests/catalog_test.php
+      - name: Docker integration
+        run: |
+          set -euxo pipefail
+          trap 'docker compose logs --tail=80' ERR
+          docker compose up --build -d --wait
+          docker compose ps
+          curl --fail --silent --show-error 'http://localhost:8080/?cat=home' -o /tmp/home.html
+          grep -q 'Наши преимущества' /tmp/home.html
+          curl --fail --silent --show-error 'http://localhost:8080/?cat=balls&page=1' -o /tmp/balls.html
+          grep -q 'product-card' /tmp/balls.html
+          curl --fail --silent --show-error 'http://localhost:8080/?cat=balls&page=2&calibr=3&short=price' -o /tmp/filter.html
+          grep -q 'catalog-page' /tmp/filter.html
+          status=$(curl --silent --output /dev/null --write-out '%{http_code}' 'http://localhost:8080/?cat=does-not-exist')
+          test "$status" = "404"
+          status=$(curl --silent --output /dev/null --write-out '%{http_code}' 'http://localhost:8080/database/prof.sql')
+          test "$status" = "403"
+          curl --fail --silent --show-error -D /tmp/image-headers -H 'Accept: image/webp' 'http://localhost:8080/image.php?name=CB081' -o /tmp/image.webp
+          grep -iq 'content-type: image/webp' /tmp/image-headers
+          docker compose down -v
