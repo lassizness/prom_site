@@ -17,8 +17,6 @@ switch($cat){
 		<div class="mid" style="height:10px">
 		' . catalogMenu($cat) . '
 		</div>
-	
-		</div>
 		<div id="gohome">
 		<a href="?cat=home" ><img src="images/home.png" height="50px" width="250px"><br></a>
 		</div>
@@ -36,7 +34,7 @@ switch($cat){
 		<p>Наша история берет начало в далеком 1994 году. Профиль работы - проведение фейерверков различного масштаба и продажа фейерверков бытового назначения. Становление компании выпало на сложный для всей России период, когда многие конкуренты не выдержали натиска времени и событий, и растворились на коммерческом горизонте. Наша компания в это время развивалась и набирала обороты на рынке пиротехники, ассортимент пиротехнических изделий постоянно расширялся. Благодаря чему, за эти годы мы приобрели не только огромный, бесценный опыт, но и бесчисленное количество положительных отзывов наших клиентов.
 		</p><br>
 		<p>На сегодняшний день, нам доверяют проводить мероприятия, различного масштаба, от дня рождения до дня города.</p></div></div>
-		<div id="rennab"><img src="../images/imageb.png" width="1120px" height="120px" alt=""> </div>
+		<div id="rennab"><img src="/images/imageb.png" width="1120px" height="120px" alt=""> </div>
 		<div id="lowabout">
 		<div id="lol">
 		<img src="images/lol.png" ><br>
@@ -80,7 +78,7 @@ switch($cat){
 		</div>';
 		echo'<div class="cont">Контакты
 		<div class="info">
-		<f> Оренбург</f><br><br>
+		<span class="contact-city">Оренбург</span><br><br>
 		Адрес:<br>
 		пр.Дзержинского 36<br><br>
 		Телефон:<br>
@@ -92,7 +90,7 @@ switch($cat){
 		</div>
 		</div>
 		</div>';
-   echo'<div id="rennab"><img src="../images/imageb.png" width="1120px" height="120px" alt=""> </div>';
+   echo'<div id="rennab"><img src="/images/imageb.png" width="1120px" height="120px" alt=""> </div>';
 		echo' <div id="lowabout">
 		<div id="lol">
 		<img src="images/lol.png" ><br>
@@ -158,8 +156,8 @@ switch($cat){
 		<a href="/load/price.xlsx" ><img src="images/loadprice.png"><br></a>
 		</div>
 		<div class="text">
-		<a>Профессиональный фейерверк- это творческий и в тоже время трудоемкий процесс. На подготовку только одного заказа требуется огромное количество сил и времени, поэтому для компаний, занимающихся пиротехническими изделиями очень важно, чтобы реализуемый товар был надежный и сертифицированный. Наша компания является импортером высококачественной пиротехнической продукции. У нас вы можете найти широкий ассортимент изделий.
-		</a><br>
+		<p>Профессиональный фейерверк- это творческий и в тоже время трудоемкий процесс. На подготовку только одного заказа требуется огромное количество сил и времени, поэтому для компаний, занимающихся пиротехническими изделиями очень важно, чтобы реализуемый товар был надежный и сертифицированный. Наша компания является импортером высококачественной пиротехнической продукции. У нас вы можете найти широкий ассортимент изделий.
+		</p><br>
 		</div>
 	
 		<div class="icons">
@@ -169,7 +167,7 @@ switch($cat){
 		<img src="images/reklam.png" ><br>
 		</div>-->
 		</div>
-        <div style="position: relative;width: 1120px; margin: 0 auto;"><img src="../images/imageb.png" width="1120px" height="120px" alt=""> </div>
+        <div style="position: relative;width: 1120px; margin: 0 auto;"><img src="/images/imageb.png" width="1120px" height="120px" alt=""> </div>
 		<div id="low">
 		<div id="lol">
 		<img src="images/lol.png" ><br>
@@ -204,4 +202,5 @@ switch($cat){
 	}
 	$catalog = new CatalogRepository($db);
 	[$items, $total, $page] = $catalog->getPage($cat, $page, $sort, $diameter);
-	require __DIR__.'/catalog.php';?>
+	require __DIR__.'/catalog.php';
+?>

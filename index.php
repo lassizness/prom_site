@@ -5,6 +5,7 @@ if(!is_string($cat) || !in_array($cat, $categories, true)){
 	http_response_code(404);
 	$cat = '404';
 }
+if($cat === '404') http_response_code(404);
 $page = filter_var($_GET['page'] ?? 1, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]) ?: 1;
 $calibr = $_GET['calibr'] ?? 'all';
 if(!is_string($calibr) || !in_array($calibr, ['all', '2.5', '3', '3.0', '4', '4.0', '5', '5.0', '6', '6.0'], true)) $calibr = 'all';
